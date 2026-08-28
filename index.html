@@ -1,58 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO -->
-  <title>벧엘한인장로교회 | Korean Church in Fayetteville, NC</title>
+  <title>벧엘한인장로교회 | Korean Bethel Presbyterian Church | Fayetteville NC</title>
 
-  <meta
-    name="description"
-    content="벧엘한인장로교회(Korean Bethel Presbyterian Church)는 Fayetteville, North Carolina에 위치한 한인 교회입니다. 함께 예배하고 말씀 안에서 성장하며 지역과 열방을 섬깁니다."
-  />
+  <meta name="description"
+        content="벧엘한인장로교회 Korean Bethel Presbyterian Church는 Fayetteville, North Carolina 지역의 한인 교회입니다. 말씀과 예배, 다음세대, 선교를 통해 하나님의 은혜를 나누는 교회입니다.">
 
-  <meta
-    name="keywords"
-    content="Fayetteville Korean Church, Korean Church Fayetteville NC, Korean Church Fort Bragg, Korean Church Fort Liberty, Fayetteville 한인교회, 벧엘한인장로교회"
-  />
-
-  <meta name="author" content="Korean Bethel Presbyterian Church" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="벧엘한인장로교회 | Korean Bethel Presbyterian Church" />
-  <meta
-    property="og:description"
-    content="A Korean Church in Fayetteville, North Carolina"
-  />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.bethelkrchurch.org/" />
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://www.bethelkrchurch.org/" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
-    rel="stylesheet"
-  />
+  <meta name="keywords"
+        content="Fayetteville Korean Church, Korean Church Fayetteville NC, Fayetteville NC Korean Church, 벧엘한인장로교회, Korean Bethel Presbyterian Church">
 
   <style>
-    :root {
-      --navy: #24364b;
-      --navy-dark: #182534;
-      --blue-gray: #60758c;
-      --cream: #f7f5f0;
-      --white: #ffffff;
-      --text: #252525;
-      --light-text: #6f7479;
-      --line: #e5e3de;
-      --max-width: 1180px;
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -64,562 +24,238 @@
     }
 
     body {
-      font-family: "Noto Sans KR", sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.7;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans KR",
+        Arial,
+        sans-serif;
+      color: #ffffff;
+      background: #111;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+
+      /*
+        church.jpg 파일을 repository에 올리면
+        아래 배경으로 사용됩니다.
+      */
+      background:
+        linear-gradient(
+          rgba(9, 20, 31, 0.45),
+          rgba(9, 20, 31, 0.68)
+        ),
+        url("church.jpg") center center / cover no-repeat;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(92%, var(--max-width));
-      margin: 0 auto;
-    }
-
-    /* =========================
-       HEADER
-    ========================== */
-
-    header {
-      position: fixed;
+    /* 위쪽 교회명 */
+    .header {
+      position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.93);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
+      width: 100%;
+      padding: 28px 50px;
 
-    .navbar {
-      height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      z-index: 10;
     }
 
-    .logo {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.3;
+    .church-name {
+      text-align: left;
+      line-height: 1.25;
     }
 
-    .logo-korean {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--navy);
+    .church-name .ko {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
     }
 
-    .logo-english {
-      margin-top: 3px;
-      font-size: 0.68rem;
-      color: var(--light-text);
-      letter-spacing: 0.04em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 38px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: #3c4248;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--blue-gray);
-    }
-
-    .menu-button {
-      display: none;
-      border: none;
-      background: transparent;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: var(--navy);
-    }
-
-    /* =========================
-       HERO
-    ========================== */
-
-    .hero {
-      min-height: 100vh;
-      padding-top: 78px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(24, 37, 52, 0.88) 0%,
-          rgba(36, 54, 75, 0.73) 48%,
-          rgba(36, 54, 75, 0.34) 100%
-        ),
-        linear-gradient(135deg, #677d92, #aab5be);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(
-          circle at 75% 35%,
-          rgba(255, 255, 255, 0.15),
-          transparent 30%
-        );
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      color: white;
-      max-width: 760px;
-      padding: 80px 0;
-    }
-
-    .hero-small {
-      font-size: 0.95rem;
+    .church-name .en {
+      margin-top: 4px;
+      font-size: 11px;
       font-weight: 400;
-      letter-spacing: 0.15em;
-      margin-bottom: 18px;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid rgba(255,255,255,0.55);
+      padding-bottom: 4px;
+    }
+
+    /* 중앙 콘텐츠 */
+    .hero-content {
+      max-width: 950px;
+      margin-top: 30px;
+    }
+
+    .small-title {
+      font-size: 14px;
+      letter-spacing: 4px;
+      margin-bottom: 25px;
       opacity: 0.9;
     }
 
-    .hero h1 {
-      font-family: "Playfair Display", "Noto Sans KR", serif;
-      font-size: clamp(3.1rem, 7vw, 6.2rem);
-      font-weight: 500;
-      line-height: 1.06;
-      margin-bottom: 26px;
-      letter-spacing: -0.03em;
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(52px, 8vw, 105px);
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -3px;
+      margin-bottom: 30px;
     }
 
-    .hero-description {
-      max-width: 610px;
-      font-size: 1.08rem;
-      font-weight: 300;
+    h1 .ko {
+      display: block;
+      font-family:
+        "Noto Serif KR",
+        Georgia,
+        serif;
+
+      font-size: 0.56em;
+      letter-spacing: -2px;
+      margin-bottom: 16px;
+    }
+
+    .verse {
+      font-size: 16px;
       line-height: 1.9;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 38px;
+      margin-bottom: 42px;
+      color: rgba(255,255,255,0.92);
     }
 
-    .hero-buttons {
+    .verse span {
+      display: block;
+      margin-top: 5px;
+      font-size: 13px;
+      opacity: 0.7;
+    }
+
+    /* 버튼 */
+    .buttons {
       display: flex;
       gap: 14px;
+      justify-content: center;
       flex-wrap: wrap;
     }
 
-    .button {
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 145px;
-      padding: 13px 25px;
-      border-radius: 2px;
-      font-size: 0.9rem;
+
+      min-width: 170px;
+      height: 52px;
+
+      text-decoration: none;
+      font-size: 14px;
       font-weight: 500;
+      letter-spacing: 0.4px;
+
       transition: 0.25s ease;
     }
 
-    .button-light {
-      background: white;
-      color: var(--navy);
+    .btn-primary {
+      background: #ffffff;
+      color: #172436;
+      border: 1px solid #ffffff;
     }
 
-    .button-light:hover {
-      background: #eee;
+    .btn-primary:hover {
+      background: rgba(255,255,255,0.88);
     }
 
-    .button-outline {
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      color: white;
+    .btn-outline {
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.04);
     }
 
-    .button-outline:hover {
-      background: rgba(255, 255, 255, 0.12);
+    .btn-outline:hover {
+      background: #ffffff;
+      color: #172436;
     }
 
-    /* =========================
-       COMMON SECTION
-    ========================== */
-
-    section {
-      padding: 110px 0;
-    }
-
-    .section-label {
-      color: var(--blue-gray);
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .section-title {
-      font-family: "Playfair Display", "Noto Sans KR", serif;
-      color: var(--navy);
-      font-size: clamp(2.1rem, 4vw, 3.3rem);
-      font-weight: 500;
-      line-height: 1.25;
-      margin-bottom: 25px;
-    }
-
-    .section-text {
-      color: #62676b;
-      font-size: 1rem;
-      line-height: 2;
-    }
-
-    /* =========================
-       ABOUT
-    ========================== */
-
-    .about {
-      background: var(--white);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 90px;
-      align-items: center;
-    }
-
-    .about-visual {
-      min-height: 480px;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(36, 54, 75, 0.1),
-          rgba(36, 54, 75, 0.02)
-        ),
-        #e7e8e6;
-      position: relative;
-    }
-
-    .about-visual::after {
-      content: "BETHEL";
+    /* 하단 정보 */
+    .bottom-info {
       position: absolute;
-      right: -18px;
-      bottom: 12px;
-      writing-mode: vertical-rl;
-      font-size: 5rem;
-      letter-spacing: 0.12em;
-      font-family: "Playfair Display", serif;
-      color: rgba(36, 54, 75, 0.08);
-    }
+      bottom: 32px;
+      left: 0;
+      width: 100%;
 
-    /* =========================
-       WORSHIP
-    ========================== */
-
-    .worship {
-      background: var(--cream);
-    }
-
-    .worship-heading {
-      max-width: 700px;
-      margin-bottom: 60px;
-    }
-
-    .worship-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid #d8d5ce;
-      border-bottom: 1px solid #d8d5ce;
-    }
-
-    .worship-item {
-      padding: 40px 35px;
-      border-right: 1px solid #d8d5ce;
-    }
-
-    .worship-item:last-child {
-      border-right: none;
-    }
-
-    .worship-item h3 {
-      color: var(--navy);
-      margin-bottom: 12px;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-
-    .worship-time {
-      font-family: "Playfair Display", serif;
-      font-size: 1.5rem;
-      color: var(--navy);
-      margin-bottom: 6px;
-    }
-
-    .worship-note {
-      color: var(--light-text);
-      font-size: 0.88rem;
-    }
-
-    /* =========================
-       MESSAGE
-    ========================== */
-
-    .message {
-      background: var(--navy-dark);
-      color: white;
-      text-align: center;
-    }
-
-    .message .section-label {
-      color: #aebbc8;
-    }
-
-    .message .section-title {
-      color: white;
-      max-width: 780px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .message-description {
-      max-width: 660px;
-      margin: 0 auto 38px;
-      color: rgba(255, 255, 255, 0.72);
-      line-height: 1.9;
-    }
-
-    /* =========================
-       MINISTRY
-    ========================== */
-
-    .ministry-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-top: 55px;
-    }
-
-    .ministry-card {
-      border-top: 2px solid var(--navy);
-      padding: 28px 5px 10px;
-    }
-
-    .ministry-number {
-      color: #a4abb2;
-      font-size: 0.8rem;
-      margin-bottom: 20px;
-    }
-
-    .ministry-card h3 {
-      font-size: 1.15rem;
-      color: var(--navy);
-      margin-bottom: 12px;
-    }
-
-    .ministry-card p {
-      font-size: 0.92rem;
-      color: var(--light-text);
-      line-height: 1.8;
-    }
-
-    /* =========================
-       VISIT
-    ========================== */
-
-    .visit {
-      background: #eff0ef;
-    }
-
-    .visit-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: stretch;
-    }
-
-    .visit-info {
-      padding: 25px 0;
-    }
-
-    .contact-list {
-      margin-top: 35px;
-      display: grid;
-      gap: 22px;
-    }
-
-    .contact-item strong {
-      display: block;
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      color: var(--navy);
-      margin-bottom: 5px;
-    }
-
-    .contact-item span,
-    .contact-item a {
-      color: #62676b;
-    }
-
-    .map-box {
-      min-height: 440px;
-      background: #d9ddde;
       display: flex;
-      align-items: center;
       justify-content: center;
-      text-align: center;
-      color: #657079;
-      padding: 30px;
+      gap: 35px;
+
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      opacity: 0.78;
     }
 
-    /* =========================
-       FOOTER
-    ========================== */
+    /* MOBILE */
+    @media (max-width: 700px) {
 
-    footer {
-      background: #101a24;
-      color: rgba(255, 255, 255, 0.65);
-      padding: 48px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .footer-church {
-      color: white;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-
-    .footer-small {
-      font-size: 0.78rem;
-    }
-
-    /* =========================
-       MOBILE
-    ========================== */
-
-    @media (max-width: 850px) {
-      .menu-button {
-        display: block;
+      .header {
+        padding: 22px 20px;
       }
 
-      .nav-links {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 78px;
-        background: white;
+      .church-name .ko {
+        font-size: 15px;
+      }
+
+      .church-name .en {
+        font-size: 8px;
+        letter-spacing: 0.8px;
+      }
+
+      .nav-link {
+        font-size: 12px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .small-title {
+        font-size: 11px;
+        letter-spacing: 3px;
+      }
+
+      .verse {
+        font-size: 14px;
+      }
+
+      .buttons {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        padding: 10px 4%;
-        border-bottom: 1px solid #eee;
-
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(-8px);
-        transition: 0.2s ease;
+        align-items: center;
       }
 
-      .nav-links.active {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
+      .btn {
+        width: 230px;
       }
 
-      .nav-links li {
-        width: 100%;
-      }
-
-      .nav-links a {
-        display: block;
-        padding: 15px 5px;
-      }
-
-      .about-grid,
-      .visit-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
-
-      .about-visual {
-        min-height: 340px;
-      }
-
-      .worship-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .worship-item {
-        border-right: none;
-        border-bottom: 1px solid #d8d5ce;
-      }
-
-      .worship-item:last-child {
-        border-bottom: none;
-      }
-
-      .ministry-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-inner {
+      .bottom-info {
+        bottom: 20px;
         flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 520px) {
-      section {
-        padding: 80px 0;
-      }
-
-      .navbar {
-        height: 70px;
-      }
-
-      .nav-links {
-        top: 70px;
-      }
-
-      .logo-korean {
-        font-size: 1.08rem;
-      }
-
-      .logo-english {
-        font-size: 0.6rem;
-      }
-
-      .hero {
-        padding-top: 70px;
-      }
-
-      .hero-content {
-        padding: 60px 0;
-      }
-
-      .hero h1 {
-        font-size: 3rem;
+        gap: 5px;
       }
     }
   </style>
@@ -627,365 +263,87 @@
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="container navbar">
+  <section class="hero">
 
-      <a href="#home" class="logo">
-        <span class="logo-korean">벧엘한인장로교회</span>
-        <span class="logo-english">KOREAN BETHEL PRESBYTERIAN CHURCH</span>
-      </a>
+    <!-- 상단 -->
+    <header class="header">
 
-      <button
-        class="menu-button"
-        id="menuButton"
-        aria-label="메뉴 열기"
-      >
-        ☰
-      </button>
+      <div class="church-name">
+        <div class="ko">벧엘한인장로교회</div>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">교회소개</a></li>
-        <li><a href="#worship">예배안내</a></li>
-        <li><a href="#message">말씀</a></li>
-        <li><a href="#ministry">사역</a></li>
-        <li><a href="#visit">오시는 길</a></li>
-      </ul>
-
-    </div>
-  </header>
-
-
-  <!-- HERO -->
-  <main>
-
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-
-          <p class="hero-small">
-            KOREAN CHURCH · FAYETTEVILLE, NORTH CAROLINA
-          </p>
-
-          <h1>
-            은혜 위에<br />
-            더하시는 은혜
-          </h1>
-
-          <p class="hero-description">
-            하나님의 말씀 안에서 함께 예배하고,
-            그리스도의 사랑으로 서로를 섬기며,
-            지역과 열방을 향해 복음을 전하는 공동체입니다.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#worship" class="button button-light">
-              예배안내
-            </a>
-
-            <a href="#visit" class="button button-outline">
-              처음 오셨나요?
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ABOUT -->
-    <section class="about" id="about">
-      <div class="container about-grid">
-
-        <div class="about-visual">
-          <!--
-          나중에 교회 사진을 사용할 경우
-          이 div 대신 아래처럼 넣어도 됩니다.
-
-          <img src="images/church.jpg" alt="벧엘한인장로교회 예배당">
-          -->
-        </div>
-
-        <div>
-          <p class="section-label">Welcome to Bethel</p>
-
-          <h2 class="section-title">
-            Fayetteville에서<br />
-            함께 예배하는 한인 교회
-          </h2>
-
-          <p class="section-text">
-            벧엘한인장로교회는 Fayetteville, North Carolina에
-            위치한 한인 신앙 공동체입니다.
-            하나님의 말씀을 중심으로 예배하며,
-            모든 세대가 믿음 안에서 성장하고,
-            지역사회를 섬기며 복음을 전하는 교회를 지향합니다.
-          </p>
-
-          <br />
-
-          <p class="section-text">
-            처음 교회를 방문하시는 분들과
-            Fayetteville 지역에 새롭게 오신 분들을 환영합니다.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- WORSHIP -->
-    <section class="worship" id="worship">
-      <div class="container">
-
-        <div class="worship-heading">
-          <p class="section-label">Worship</p>
-
-          <h2 class="section-title">
-            예배안내
-          </h2>
-
-          <p class="section-text">
-            하나님을 예배하는 자리로 여러분을 초대합니다.
-          </p>
-        </div>
-
-
-        <div class="worship-grid">
-
-          <div class="worship-item">
-            <h3>주일예배</h3>
-            <div class="worship-time">Sunday</div>
-            <p class="worship-note">
-              예배시간을 이곳에 입력하세요
-            </p>
-          </div>
-
-          <div class="worship-item">
-            <h3>영어예배</h3>
-            <div class="worship-time">English Worship</div>
-            <p class="worship-note">
-              예배시간을 이곳에 입력하세요
-            </p>
-          </div>
-
-          <div class="worship-item">
-            <h3>금요기도회</h3>
-            <div class="worship-time">Friday</div>
-            <p class="worship-note">
-              기도회 시간을 이곳에 입력하세요
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- MESSAGE -->
-    <section class="message" id="message">
-      <div class="container">
-
-        <p class="section-label">Sunday Message</p>
-
-        <h2 class="section-title">
-          말씀으로 우리의 삶을 세워갑니다
-        </h2>
-
-        <p class="message-description">
-          주일예배 말씀을 통해 하나님의 뜻을 배우고
-          우리의 일상 가운데 복음을 살아내기를 소망합니다.
-        </p>
-
-        <!--
-          실제 YouTube 채널 주소로 변경하세요.
-        -->
-        <a
-          href="#"
-          class="button button-outline"
-        >
-          최근 설교 보기
-        </a>
-
-      </div>
-    </section>
-
-
-    <!-- MINISTRY -->
-    <section id="ministry">
-      <div class="container">
-
-        <p class="section-label">Ministry</p>
-
-        <h2 class="section-title">
-          함께 자라고 함께 섬깁니다
-        </h2>
-
-        <div class="ministry-grid">
-
-          <div class="ministry-card">
-            <div class="ministry-number">01</div>
-
-            <h3>다음세대</h3>
-
-            <p>
-              자녀들이 말씀과 예배 안에서
-              믿음의 다음 세대로 성장하도록 함께 섬깁니다.
-            </p>
-          </div>
-
-          <div class="ministry-card">
-            <div class="ministry-number">02</div>
-
-            <h3>교제와 양육</h3>
-
-            <p>
-              말씀과 교제를 통해 서로를 세우며
-              그리스도의 제자로 함께 성장합니다.
-            </p>
-          </div>
-
-          <div class="ministry-card">
-            <div class="ministry-number">03</div>
-
-            <h3>선교와 섬김</h3>
-
-            <p>
-              지역사회와 열방을 향하여
-              복음과 사랑을 나누는 교회가 되기를 소망합니다.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- VISIT -->
-    <section class="visit" id="visit">
-      <div class="container visit-grid">
-
-        <div class="visit-info">
-
-          <p class="section-label">Visit Us</p>
-
-          <h2 class="section-title">
-            처음 오시는 분들을<br />
-            환영합니다
-          </h2>
-
-          <p class="section-text">
-            Fayetteville 지역에서 교회를 찾고 계신다면
-            편안한 마음으로 방문해 주세요.
-          </p>
-
-
-          <div class="contact-list">
-
-            <div class="contact-item">
-              <strong>ADDRESS</strong>
-
-              <span>
-                901 Bunce Rd<br />
-                Fayetteville, NC 28314
-              </span>
-            </div>
-
-
-            <div class="contact-item">
-              <strong>PHONE</strong>
-
-              <a href="tel:+19109169700">
-                (910) 916-9700
-              </a>
-            </div>
-
-
-            <div class="contact-item">
-              <strong>WEBSITE</strong>
-
-              <a href="https://www.bethelkrchurch.org/">
-                www.bethelkrchurch.org
-              </a>
-            </div>
-
-
-            <div class="contact-item">
-              <strong>EMAIL</strong>
-
-              <a href="mailto:admin@bethelkrchurch.org">
-                admin@bethelkrchurch.org
-              </a>
-            </div>
-
-          </div>
-        </div>
-
-
-        <div class="map-box">
-          <div>
-            <strong>901 Bunce Rd</strong>
-            <br />
-            Fayetteville, NC 28314
-            <br /><br />
-
-            <!-- 나중에 Google Maps iframe으로 교체 -->
-            Google Map 영역
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container footer-inner">
-
-      <div>
-        <div class="footer-church">
-          벧엘한인장로교회
-        </div>
-
-        <div class="footer-small">
+        <div class="en">
           Korean Bethel Presbyterian Church
         </div>
       </div>
 
-      <div class="footer-small">
-        © 2026 Korean Bethel Presbyterian Church.
-        All rights reserved.
+      <a
+        href="https://www.bethelkrchurch.org/"
+        target="_blank"
+        rel="noopener"
+        class="nav-link">
+        교회 홈페이지 →
+      </a>
+
+    </header>
+
+
+    <!-- 중앙 -->
+    <main class="hero-content">
+
+      <div class="small-title">
+        2026 CHURCH THEME
+      </div>
+
+      <h1>
+        <span class="ko">더하시는 은혜</span>
+        Grace Upon Grace
+      </h1>
+
+      <div class="verse">
+        “우리가 다 그의 충만한 데서 받으니 은혜 위에 은혜러라”
+
+        <span>
+          JOHN 1:16
+        </span>
+      </div>
+
+      <div class="buttons">
+
+        <a
+          href="https://www.bethelkrchurch.org/"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary">
+          교회 둘러보기
+        </a>
+
+        <a
+          href="https://www.bethelkrchurch.org/board/list.do?iboardmanagerseq=8"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-outline">
+          예배와 말씀
+        </a>
+
+      </div>
+
+    </main>
+
+
+    <!-- 하단 -->
+    <div class="bottom-info">
+
+      <div>
+        FAYETTEVILLE, NORTH CAROLINA
+      </div>
+
+      <div>
+        KOREAN BETHEL PRESBYTERIAN CHURCH
       </div>
 
     </div>
-  </footer>
 
-
-  <script>
-    const menuButton = document.getElementById("menuButton");
-    const navLinks = document.getElementById("navLinks");
-
-    menuButton.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-
-      if (navLinks.classList.contains("active")) {
-        menuButton.textContent = "✕";
-      } else {
-        menuButton.textContent = "☰";
-      }
-    });
-
-    document.querySelectorAll(".nav-links a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-        menuButton.textContent = "☰";
-      });
-    });
-  </script>
+  </section>
 
 </body>
 </html>
