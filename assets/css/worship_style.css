@@ -79,9 +79,11 @@ a {
   flex-shrink: 0;
   color: #DCE6F2;
   font-size: 13px;
-  border-bottom: 1px solid rgba(220,230,242,0.55);
+  /* border-bottom: 1px solid rgba(220,230,242,0.55); */
   padding-bottom: 4px;
   white-space: nowrap;
+	border-bottom: none;
+  text-decoration: none;
 }
 
 
