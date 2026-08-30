@@ -83,19 +83,13 @@
 
     .hero {
       min-height: 100vh;
-
       position: relative;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       text-align: center;
-
       padding: 120px 24px 100px;
-
       color: #ffffff;
-
       background:
         linear-gradient(
           rgba(9, 20, 31, 0.46),
@@ -175,7 +169,6 @@
     .hero-content {
       width: 100%;
       max-width: 950px;
-
       margin-top: 20px;
     }
 
@@ -246,18 +239,14 @@
     ========================== */
 
     .section {
-      padding:
-        110px 24px;
+      padding: 65px 24px;  /* org: 110px 24px */
     }
 
 
     .section-inner {
       width: 100%;
-
       max-width: 1100px;
-
-      margin:
-        0 auto;
+      margin: 0 auto;
     }
 
 
@@ -289,7 +278,7 @@
 
       line-height: 1.2;
 
-      margin-bottom: 28px;
+      margin-bottom: 30px;
 
       color: #172436;
     }
@@ -299,18 +288,19 @@
        SUNDAY MESSAGE
     ========================== */
 
-    .sunday-message {
-      background: #f7f5f0;
-    }
+	.sunday-message {
+	  background: #f7f5f0;
+	  /* padding-top: 65px; 
+	  padding-bottom: 65px; */
+	}
 
 
     .message-grid {
       display: grid;
 
-      grid-template-columns:
-        1.2fr 1fr;
+      grid-template-columns: 0.8fr 1.4fr;
 
-      gap: 70px;
+      gap: 0px;
 
       align-items: center;
     }
@@ -332,8 +322,7 @@
 
       padding: 45px;
 
-      border:
-        1px solid #e6e2d9;
+      border: 1px solid #e6e2d9;
     }
 
 
@@ -415,94 +404,74 @@
 
     .ministry-menu {
       background: #ffffff;
-
       text-align: center;
     }
-
+	
+	.ministry-menu .section-label,
+	.ministry-menu .section-title {
+	  text-align: left;
+	}
 
     .menu-intro {
       max-width: 650px;
-
-      margin:
-        0 auto 55px;
-
+      margin: 0 auto 55px;
       font-size: 16px;
-
       line-height: 1.8;
-
       color: #6b747c;
     }
 
-
-    .menu-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 16px;
+    .menu-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
     }
 
+    .menu-row-top {
+      margin-bottom: 10px;
+    }
 
     .menu-card {
-      min-height: 145px;
-
-      padding: 30px 20px;
+      width: 155px;
+      height: 72px;
+      padding: 10px 8px;
 
       display: flex;
-
       flex-direction: column;
-
       justify-content: center;
-
       align-items: center;
 
-      border:
-        1px solid #dddfe1;
-
       background: #ffffff;
-
       color: #172436;
-
-      transition:
-        0.25s ease;
+      white-space: nowrap;
+      transition: 0.25s ease;
     }
 
+    .menu-card-primary {
+      border: 1px solid #d7dce1;
+    }
+
+    .menu-card-secondary {
+      border: 1px solid #c9b88f;
+    }
 
     .menu-card:hover {
       background: #172436;
-
       color: #ffffff;
-
-      transform:
-        translateY(-3px);
+      transform: translateY(-2px);
     }
-
 
     .menu-card .ko {
-      font-size: 20px;
-
+      font-size: 16px;
       font-weight: 600;
-
-      margin-bottom: 9px;
+      margin-bottom: 4px;
     }
-
 
     .menu-card .en {
-      font-size: 11px;
-
-      letter-spacing: 1.7px;
-
+      font-size: 9px;
+      letter-spacing: 0.8px;
       opacity: 0.65;
-
       text-transform: uppercase;
-    }
-
-
-    /* 7개 메뉴 중 마지막 행 가운데 정렬 */
-
-    .menu-card:nth-child(5) {
-      grid-column: 1 / 2;
+      white-space: nowrap;
     }
 
 
@@ -629,15 +598,7 @@
       .visit-grid {
 
         grid-template-columns: 1fr;
-
-        gap: 45px;
-      }
-
-
-      .menu-grid {
-
-        grid-template-columns:
-          repeat(2, 1fr);
+        gap: 5px;
       }
 
 
@@ -665,19 +626,14 @@
       .hero {
 
         min-height: 100svh;
-
-        padding:
-          125px 20px 80px;
+        padding: 125px 20px 80px;
       }
 
 
       .header {
 
-        padding:
-          21px 20px;
-
-        align-items:
-          flex-start;
+        padding: 21px 20px;
+        align-items: flex-start;
       }
 
 
@@ -690,9 +646,7 @@
       .church-name .en {
 
         font-size: 8px;
-
         max-width: 190px;
-
         line-height: 1.5;
       }
 
@@ -700,16 +654,13 @@
       .nav-link {
 
         font-size: 11px;
-
         white-space: nowrap;
       }
 
 
       .seo-title {
 
-        font-size:
-          clamp(39px, 12vw, 58px);
-
+        font-size: clamp(39px, 12vw, 58px);
         letter-spacing: -1.5px;
       }
 
@@ -717,7 +668,6 @@
       .church-intro {
 
         font-size: 14px;
-
         margin-bottom: 42px;
       }
 
@@ -725,7 +675,6 @@
       .small-title {
 
         font-size: 10px;
-
         letter-spacing: 3px;
       }
 
@@ -739,15 +688,13 @@
       .verse {
 
         font-size: 14px;
-
         line-height: 1.8;
       }
 
 
       .section {
 
-        padding:
-          75px 20px;
+        padding: 50px 20px;
       }
 
 
@@ -769,23 +716,28 @@
       }
 
 
-      .menu-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 12px;
+      .menu-row {
+        flex-wrap: wrap;
+        gap: 10px;
       }
 
+      .menu-row-top {
+        margin-bottom: 10px;
+      }
 
       .menu-card {
-
-        min-height: 105px;
+        width: 140px;
+        height: 68px;
+        padding: 10px 8px;
       }
 
+      .menu-card .ko {
+        font-size: 15px;
+      }
 
-      .menu-card:nth-child(5) {
-
-        grid-column: auto;
+      .menu-card .en {
+        font-size: 8px;
+        letter-spacing: 0.6px;
       }
 
     }
@@ -865,9 +817,8 @@
   <section class="section sunday-message">
 
     <div class="section-inner">
-
       <div class="message-grid">
-
+	  
         <div>
           <div class="section-label">SUNDAY MESSAGE</div>
           <h2 class="section-title">주일 말씀</h2>
@@ -900,7 +851,8 @@
 			  
 		  </div>
         </div>
-      </div>
+      
+	  </div>
     </div>
 
   </section>
@@ -916,158 +868,77 @@
     <div class="section-inner">
 
       <div class="section-label">BETHEL MINISTRIES</div>
-
-      <!-- <h2 class="section-title">함께 예배하고 배우고 섬깁니다</h2>
-      <p class="menu-intro">
-
-        벧엘한인장로교회의 예배와 말씀,
-        교제와 선교, 다음 세대를 위한 사역을
-        소개합니다.
-
-      </p> -->
+	  <h2 class="section-title">사역</h2>
 
 
-      <div class="menu-grid">
-
-
-        <!-- 예배안내 -->
+      <div class="menu-row menu-row-top">
 
         <a
           href="https://www.bethelkrchurch.org/"
           target="_blank"
           rel="noopener"
-          class="menu-card">
-
-          <div class="ko">
-            예배안내
-          </div>
-
-          <div class="en">
-            Worship
-          </div>
-
+          class="menu-card menu-card-primary">
+          <div class="ko">예배안내</div>
+          <div class="en">Worship</div>
         </a>
-
-
-
-        <!-- 예배말씀 -->
 
         <a
           href="https://www.bethelkrchurch.org/board/list.do?iboardmanagerseq=8"
           target="_blank"
           rel="noopener"
-          class="menu-card">
-
-          <div class="ko">
-            예배말씀
-          </div>
-
-          <div class="en">
-            Messages
-          </div>
-
+          class="menu-card menu-card-primary">
+          <div class="ko">예배말씀</div>
+          <div class="en">Messages</div>
         </a>
-
-
-
-        <!-- 말씀공부 -->
 
         <a
           href="https://www.bethelkrchurch.org/"
           target="_blank"
           rel="noopener"
-          class="menu-card">
-
-          <div class="ko">
-            말씀공부
-          </div>
-
-          <div class="en">
-            Bible Study
-          </div>
-
+          class="menu-card menu-card-primary">
+          <div class="ko">말씀공부</div>
+          <div class="en">Bible Study</div>
         </a>
-
-
-
-        <!-- 교제 -->
 
         <a
           href="https://www.bethelkrchurch.org/"
           target="_blank"
           rel="noopener"
-          class="menu-card">
-
-          <div class="ko">
-            교제
-          </div>
-
-          <div class="en">
-            Fellowship
-          </div>
-
+          class="menu-card menu-card-primary">
+          <div class="ko">교제</div>
+          <div class="en">Fellowship</div>
         </a>
 
+      </div>
 
-
-        <!-- 선교 -->
+      <div class="menu-row menu-row-bottom">
 
         <a
           href="https://www.bethelkrchurch.org/"
           target="_blank"
           rel="noopener"
-          class="menu-card">
-
-          <div class="ko">
-            선교
-          </div>
-
-          <div class="en">
-            Mission
-          </div>
-
+          class="menu-card menu-card-secondary">
+          <div class="ko">선교</div>
+          <div class="en">Mission</div>
         </a>
-
-
-
-        <!-- 세종한국학교 -->
 
         <a
           href="https://www.bethelkrchurch.org/"
           target="_blank"
           rel="noopener"
-          class="menu-card">
-
-          <div class="ko">
-            세종한국학교
-          </div>
-
-          <div class="en">
-            Sejong Korean School
-          </div>
-
+          class="menu-card menu-card-secondary">
+          <div class="ko">세종한국학교</div>
+          <div class="en">Sejong Korean School</div>
         </a>
-
-
-
-        <!-- 도서관 -->
 
         <a
           href="https://www.bethelkrchurch.org/"
           target="_blank"
           rel="noopener"
-          class="menu-card">
-
-          <div class="ko">
-            도서관
-          </div>
-
-          <div class="en">
-            Korean Library
-          </div>
-
+          class="menu-card menu-card-secondary">
+          <div class="ko">도서관</div>
+          <div class="en">Korean Library</div>
         </a>
-
 
       </div>
 
@@ -1087,7 +958,6 @@
 
 
       <div class="visit-grid">
-
 
         <div>
 
