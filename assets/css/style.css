@@ -41,14 +41,19 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 120px 24px 100px;
+      padding: 120px 24px 150px;
       color: #ffffff;
-      background:
-        linear-gradient(
-          rgba(11, 31, 58, 0.52),
-          rgba(11, 31, 58, 0.82)
-        ),
-        url("../images/church.jpg") center center / cover no-repeat;
+      overflow: hidden;
+      background: linear-gradient(180deg, #183554 0%, #0B1F3A 100%);
+    }
+
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: url("../images/church.jpg") center center / cover no-repeat;
     }
 
 
@@ -75,28 +80,47 @@
 
 
     .church-name {
+      display: flex;
+      align-items: center;
+      gap: 13px;
       text-align: left;
       line-height: 1.25;
     }
 
 
+    .church-logo {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 4px;
+      flex: 0 0 auto;
+    }
+
+
+    .church-name-text {
+      min-width: 0;
+    }
+
+
     .church-name .ko {
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 600;
       letter-spacing: -0.3px;
+			color: #FFFFFF;
     }
 
 
     .church-name .en {
       margin-top: 4px;
 
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 400;
 
-      letter-spacing: 1.2px;
-
+      letter-spacing: 1px;
       text-transform: uppercase;
 
+			color: #C8D4E3;
       opacity: 0.85;
     }
 
@@ -120,6 +144,8 @@
     ========================== */
 
     .hero-content {
+      position: relative;
+      z-index: 1;
       width: 100%;
       max-width: 950px;
       margin-top: 20px;
@@ -184,6 +210,67 @@
       font-size: 12px;
       letter-spacing: 2px;
       opacity: 0.7;
+    }
+
+
+    /* =========================
+       HERO MENU
+    ========================== */
+
+    .hero-menu {
+      position: absolute;
+      left: 50%;
+      bottom: 28px;
+      width: calc(100% - 48px);
+      max-width: 650px;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .hero-menu-card {
+      min-height: 76px;
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.58);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      transition: background-color 0.25s ease, border-color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .hero-menu-card:hover,
+    .hero-menu-card:focus-visible {
+      color: #0B1F3A;
+      background: #ffffff;
+      border-color: #ffffff;
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .hero-menu-card .ko {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .hero-menu-card .en {
+      font-size: 9px;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      opacity: 0.78;
+    }
+
+    #worship-menu {
+      scroll-margin-top: 24px;
     }
 
 
@@ -552,12 +639,24 @@
     }
 
     .church-name .ko {
-      color: #FFFFFF;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+			color: #FFFFFF;
     }
 
+
     .church-name .en {
-      color: #C8D4E3;
-      opacity: 1;
+      margin-top: 4px;
+
+      font-size: 14px;
+      font-weight: 400;
+
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+			color: #C8D4E3;
+      opacity: 0.85;
     }
 
     .nav-link {
@@ -629,7 +728,7 @@
       .hero {
 
         min-height: 100svh;
-        padding: 125px 20px 80px;
+        padding: 125px 20px 115px;
       }
 
 
@@ -640,18 +739,37 @@
       }
 
 
-      .church-name .ko {
-
-        font-size: 15px;
+      .church-name {
+        gap: 9px;
       }
 
 
-      .church-name .en {
-
-        font-size: 8px;
-        max-width: 190px;
-        line-height: 1.5;
+      .church-logo {
+        width: 48px;
+        height: 48px;
       }
+
+
+    .church-name .ko {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+			color: #FFFFFF;
+    }
+
+
+    .church-name .en {
+      margin-top: 4px;
+
+      font-size: 14px;
+      font-weight: 400;
+
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+			color: #C8D4E3;
+      opacity: 0.85;
+    }
 
 
       .nav-link {
@@ -671,7 +789,34 @@
       .church-intro {
 
         font-size: 14px;
-        margin-bottom: 42px;
+        margin: 36px auto 36px;
+      }
+
+
+      .hero-menu {
+        bottom: 18px;
+        width: calc(100% - 28px);
+        max-width: 440px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+      }
+
+
+      .hero-menu-card {
+        min-width: 0;
+        min-height: 66px;
+        padding: 11px 5px;
+      }
+
+
+      .hero-menu-card .ko {
+        font-size: 14px;
+      }
+
+
+      .hero-menu-card .en {
+        font-size: 7px;
+        letter-spacing: 0.45px;
       }
 
 
@@ -751,6 +896,24 @@
 		white-space: nowrap;
 	  }
 	  
+    }
+
+
+    @media (max-width: 380px) {
+
+      .hero {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .hero-menu-card .ko {
+        font-size: 13px;
+      }
+
+      .hero-menu-card .en {
+        font-size: 6.5px;
+      }
+
     }
 
   
