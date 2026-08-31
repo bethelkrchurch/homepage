@@ -44,6 +44,7 @@
       padding: 120px 24px 150px;
       color: #ffffff;
       overflow: hidden;
+      isolation: isolate;
       background: linear-gradient(180deg, #183554 0%, #0B1F3A 100%);
     }
 
@@ -52,7 +53,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      z-index: 0;
+      z-index: -1;
       background: url("../images/church.jpg") center center / cover no-repeat;
     }
 
@@ -144,8 +145,7 @@
     ========================== */
 
     .hero-content {
-      position: relative;
-      z-index: 1;
+      position: static;
       width: 100%;
       max-width: 950px;
       margin-top: 20px;
@@ -220,7 +220,7 @@
     .hero-menu {
       position: absolute;
       left: 50%;
-      bottom: 28px;
+      bottom: 24px;
       width: calc(100% - 48px);
       max-width: 650px;
       margin: 0;
@@ -794,7 +794,7 @@
 
 
       .hero-menu {
-        bottom: 18px;
+        bottom: 16px;
         width: calc(100% - 28px);
         max-width: 440px;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -914,6 +914,150 @@
         font-size: 6.5px;
       }
 
+    }
+
+
+    /* =========================
+       HERO PHOTO READABILITY
+    ========================== */
+
+    .theme-korean,
+    .verse,
+    .church-intro {
+      color: #ffffff;
+      text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.9),
+        0 3px 10px rgba(0, 0, 0, 0.75);
+    }
+
+    .theme-korean {
+      text-shadow:
+        0 2px 3px rgba(0, 0, 0, 0.95),
+        0 5px 16px rgba(0, 0, 0, 0.75);
+    }
+
+    .church-intro-en {
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .hero-menu-card {
+      background: rgba(11, 31, 58, 0.28);
+      border-color: rgba(255, 255, 255, 0.8);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+
+
+    /* =========================
+       HERO TEXT POSITION / COLOR
+    ========================== */
+
+    .church-name .ko,
+    .theme-korean,
+    .verse,
+    .verse span {
+      color: #000000;
+    }
+
+    .theme-korean,
+    .verse,
+    .verse span {
+      text-shadow: none;
+    }
+
+    .hero-theme-group {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      z-index: 2;
+      width: calc(100% - 40px);
+      transform: translate(-50%, -100%);
+    }
+
+    /* 이전 HTML 구조에서도 제목과 구절을 영역 높이만큼 위로 이동 */
+    .hero-content > .theme-korean,
+    .hero-content > .verse {
+      transform: translateY(-120px) !important;
+    }
+
+    .church-intro {
+      position: absolute;
+      left: 50%;
+      bottom: 124px;
+      z-index: 2;
+      width: fit-content;
+      max-width: calc(100% - 48px);
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      border: none;
+      transform: translateX(-50%);
+    }
+
+    .church-intro-ko,
+    .church-intro-en {
+      display: table;
+      width: auto;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 6px 10px;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      line-height: 1.25;
+    }
+
+    .church-intro-en {
+      margin-top: 8px;
+    }
+
+    .theme-korean,
+    .verse,
+    .verse span {
+      font-weight: 700;
+    }
+
+    @media (max-width: 700px) {
+
+      .hero-theme-group {
+        top: 39%;
+        width: calc(100% - 32px);
+      }
+
+      .church-intro {
+        bottom: 98px;
+        width: fit-content;
+        max-width: calc(100% - 24px);
+        margin: 0;
+        padding: 0;
+      }
+
+    }
+
+    .church-intro .church-intro-en {
+      line-height: 1.1 !important;
+    }
+
+    .church-intro-ko + .church-intro-en {
+      margin-top: 8px;
+    }
+
+    .church-intro-en + .church-intro-en {
+      margin-top: 0;
+    }
+
+    .verse span {
+      color: #6c7379;
+    }
+
+    /* 페이지 전체 글자 그림자 제거 */
+    body,
+    body * {
+      text-shadow: none !important;
     }
 
   
