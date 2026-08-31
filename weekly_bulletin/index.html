@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>벧엘한인장로교회 주보 | Weekly Bulletin</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #071426;
+      font-family: Arial, "Noto Sans KR", sans-serif;
+    }
+
+    .bulletin-viewer {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #071426;
+      touch-action: pan-y;
+      user-select: none;
+    }
+
+    .bulletin-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      transition: opacity 0.18s ease;
+      -webkit-user-drag: none;
+    }
+
+    .bulletin-image.is-changing {
+      opacity: 0;
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      width: 58px;
+      height: 82px;
+      border: 0;
+      border-radius: 6px;
+      color: #ffffff;
+      background: rgba(7, 20, 38, 0.56);
+      font-size: 46px;
+      font-weight: 300;
+      line-height: 1;
+      cursor: pointer;
+      transform: translateY(-50%);
+      transition: background-color 0.2s ease;
+    }
+
+    .nav-button:hover,
+    .nav-button:focus-visible {
+      background: rgba(7, 20, 38, 0.86);
+      outline: 2px solid rgba(255, 255, 255, 0.9);
+      outline-offset: 2px;
+    }
+
+    .nav-prev {
+      left: 18px;
+    }
+
+    .nav-next {
+      right: 18px;
+    }
+
+    .page-indicator {
+      position: absolute;
+      left: 50%;
+      bottom: 14px;
+      z-index: 2;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #ffffff;
+      background: rgba(7, 20, 38, 0.68);
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 700px) {
+      .nav-button {
+        width: 44px;
+        height: 68px;
+        font-size: 36px;
+        background: rgba(7, 20, 38, 0.48);
+      }
+
+      .nav-prev {
+        left: 8px;
+      }
+
+      .nav-next {
+        right: 8px;
+      }
+
+      .page-indicator {
+        bottom: 10px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="bulletin-viewer" id="bulletinViewer" aria-label="주보 이미지 보기">
+    <img
+      class="bulletin-image"
+      id="bulletinImage"
+      src="2026.0830.1.jpg"
+      alt="주보 1페이지">
+
+    <button class="nav-button nav-prev" id="prevButton" type="button" aria-label="이전 페이지">‹</button>
+    <button class="nav-button nav-next" id="nextButton" type="button" aria-label="다음 페이지">›</button>
+
+    <div class="page-indicator" id="pageIndicator" aria-live="polite">1 / 2</div>
+  </main>
+
+  <script>
+    /* 다음 주 주보로 교체할 때 아래 파일명만 변경하세요. */
+    const bulletinImages = [
+      "2026.0830.1.jpg",
+      "2026.0830.2.jpg"
+    ];
+
+    const viewer = document.getElementById("bulletinViewer");
+    const image = document.getElementById("bulletinImage");
+    const indicator = document.getElementById("pageIndicator");
+    const prevButton = document.getElementById("prevButton");
+    const nextButton = document.getElementById("nextButton");
+
+    let currentIndex = 0;
+    let touchStartX = 0;
+
+    function showPage(index) {
+      currentIndex = (index + bulletinImages.length) % bulletinImages.length;
+      image.classList.add("is-changing");
+
+      window.setTimeout(() => {
+        image.src = bulletinImages[currentIndex];
+        image.alt = `주보 ${currentIndex + 1}페이지`;
+        indicator.textContent = `${currentIndex + 1} / ${bulletinImages.length}`;
+        image.classList.remove("is-changing");
+      }, 120);
+    }
+
+    prevButton.addEventListener("click", () => showPage(currentIndex - 1));
+    nextButton.addEventListener("click", () => showPage(currentIndex + 1));
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") showPage(currentIndex - 1);
+      if (event.key === "ArrowRight") showPage(currentIndex + 1);
+    });
+
+    viewer.addEventListener("touchstart", (event) => {
+      touchStartX = event.changedTouches[0].clientX;
+    }, { passive: true });
+
+    viewer.addEventListener("touchend", (event) => {
+      const distance = event.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(distance) < 45) return;
+      showPage(distance > 0 ? currentIndex - 1 : currentIndex + 1);
+    }, { passive: true });
+  </script>
+</body>
+</html>
