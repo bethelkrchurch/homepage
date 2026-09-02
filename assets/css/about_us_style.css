@@ -1,0 +1,370 @@
+/* =========================
+   CHURCH INTRODUCTION PAGE
+========================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans KR",
+    Arial,
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.about-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #F7F5F0;
+  color: #0B1F3A;
+}
+
+
+/* =========================
+   HEADER
+========================== */
+
+.subpage-header {
+  background: #0B1F3A;
+  color: #FFFFFF;
+  padding: 20px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.subpage-brand {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #FFFFFF;
+}
+
+.subpage-logo {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.subpage-brand-text,
+.subpage-brand .ko,
+.subpage-brand .en {
+  display: block;
+}
+
+.subpage-brand .ko {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.subpage-brand .en {
+  margin-top: 4px;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 1.1px;
+  color: #C8D4E3;
+  text-transform: uppercase;
+}
+
+.subpage-home {
+  flex-shrink: 0;
+  color: #DCE6F2;
+  font-size: 13px;
+  padding-bottom: 4px;
+  white-space: nowrap;
+  border-bottom: none;
+  text-decoration: none;
+}
+
+
+/* =========================
+   HERO
+========================== */
+
+.about-hero {
+  background: #0B1F3A;
+  color: #FFFFFF;
+  padding: 72px 24px 82px;
+  text-align: center;
+}
+
+.about-hero .eyebrow {
+  margin-bottom: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #AEBED1;
+}
+
+.about-hero h1 {
+  margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
+  font-size: clamp(42px, 6vw, 68px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.about-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #D8E2EE;
+}
+
+
+/* =========================
+   CONTENT / CARDS
+========================== */
+
+.about-content {
+  flex: 1;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 72px 24px 90px;
+}
+
+.about-introduction {
+  margin-bottom: 42px;
+  padding: 34px 36px;
+  background: #FFFFFF;
+  border: 1px solid #E1E4E8;
+  text-align: left;
+}
+
+.about-introduction-label {
+  margin-bottom: 11px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2.4px;
+  color: #8B9299;
+}
+
+.about-introduction h2 {
+  margin: 0 0 22px;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans KR",
+    Arial,
+    sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #0B1F3A;
+}
+
+.about-introduction p {
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.85;
+  color: #4F5C6A;
+  word-break: keep-all;
+}
+
+.about-introduction-signature {
+  margin-top: 23px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0B1F3A;
+  text-align: right;
+}
+
+.about-list {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.about-card {
+  width: 205px;
+  flex: 0 0 205px;
+  min-width: 0;
+  height: 76px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF;
+  color: #0B1F3A;
+  border: 1px solid #D7DCE1;
+  text-align: center;
+  transition: transform 0.22s ease;
+}
+
+.about-card:hover,
+.about-card:focus-visible {
+  color: #0B1F3A;
+  background: #FFFFFF;
+  border-color: #D7DCE1;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.about-type {
+  margin-top: 4px;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.8px;
+  color: #8B9299;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans KR",
+    Arial,
+    sans-serif;
+}
+
+.about-card h2 {
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans KR",
+    Arial,
+    sans-serif !important;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+
+/* =========================
+   FOOTER
+========================== */
+
+.subpage-footer {
+  margin-top: auto;
+  background: #071426;
+  color: rgba(255,255,255,0.55);
+  text-align: center;
+  font-size: 12px;
+  padding: 28px 20px;
+  letter-spacing: 0.7px;
+}
+
+
+/* =========================
+   MOBILE
+========================== */
+
+@media (max-width: 700px) {
+  .subpage-header {
+    padding: 16px 20px;
+    align-items: flex-start;
+  }
+
+  .subpage-brand {
+    gap: 9px;
+  }
+
+  .subpage-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .subpage-brand .ko {
+    font-size: 15px;
+  }
+
+  .subpage-brand .en {
+    max-width: 205px;
+    font-size: 8px;
+    line-height: 1.5;
+  }
+
+  .subpage-home {
+    font-size: 11px;
+  }
+
+  .about-hero {
+    padding: 56px 20px 62px;
+  }
+
+  .about-hero h1 {
+    font-size: 40px;
+  }
+
+  .about-hero p {
+    font-size: 14px;
+  }
+
+  .about-content {
+    max-width: 100%;
+    padding: 46px 20px 60px;
+  }
+
+  .about-introduction {
+    margin-bottom: 28px;
+    padding: 25px 20px;
+  }
+
+  .about-introduction h2 {
+    margin-bottom: 17px;
+    font-size: 23px;
+  }
+
+  .about-introduction p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .about-list {
+    justify-content: center;
+    gap: 7px;
+  }
+
+  .about-card {
+    width: 140px;
+    flex-basis: 140px;
+    height: 68px;
+    padding: 10px 5px;
+  }
+
+  .about-card h2 {
+    font-size: 14px;
+  }
+
+  .about-type {
+    font-size: 7px;
+    letter-spacing: 0.6px;
+  }
+}
