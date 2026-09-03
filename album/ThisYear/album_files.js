@@ -19,7 +19,6 @@ window.BETHEL_ALBUM_FILES = [
   "./album/ThisYear/Youth Group Beach Retreat/2.mp4",
   "./album/ThisYear/Youth Group Beach Retreat/3.mp4",
   "./album/ThisYear/Youth Group Beach Retreat/4.mp4",
-  "./album/ThisYear/Youth Group Beach Retreat/5.mp4",
   "./album/ThisYear/Youth Group Beach Retreat/3.jpg",
   "./album/ThisYear/Youth Group Beach Retreat/4.jpg",
   "./album/ThisYear/Youth Group Beach Retreat/5.jpg",
