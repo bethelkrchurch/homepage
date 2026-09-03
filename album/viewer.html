@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>교회 앨범 | 벧엘한인장로교회</title>
+  <link rel="stylesheet" href="../assets/css/album_style.css">
+</head>
+<body class="album-page">
+  <header class="album-header">
+    <a href="../index.html" class="album-brand">
+      <img src="../assets/images/logo.jpg" alt="벧엘한인장로교회 로고">
+      <span><strong>벧엘한인장로교회</strong><small>Korean Bethel Presbyterian Church · Fayetteville, NC</small></span>
+    </a>
+    <a href="./index.html" class="back-link">← 앨범 목록</a>
+  </header>
+	
+  <section class="album-hero album-detail-hero">
+    <h1 id="albumTitle">PHOTO ALBUM</h1>
+    <p id="albumDescription"></p>
+		<br>
+		<div id="albumDate"></div>
+  </section>
+	
+  <main class="album-content">
+    <div class="media-list" id="mediaList"></div>
+    <p class="empty-state" id="emptyState" hidden>등록된 파일이 없습니다.</p>
+  </main>
+	
+  <div class="media-viewer" id="mediaViewer" role="dialog" aria-modal="true" aria-label="사진과 영상 전체화면 보기" hidden>
+    <button class="viewer-close" id="viewerClose" type="button" aria-label="닫기">×</button>
+    <button class="viewer-nav viewer-prev" id="viewerPrev" type="button" aria-label="이전 파일">‹</button>
+    <div class="viewer-stage" id="viewerStage"></div>
+    <button class="viewer-nav viewer-next" id="viewerNext" type="button" aria-label="다음 파일">›</button>
+    <div class="viewer-count" id="viewerCount"></div>
+  </div>
+	
+  <footer class="album-footer">© Korean Bethel Presbyterian Church · Fayetteville, North Carolina</footer>
+  <script src="./album_data.js"></script>
+  <script src="../assets/script/album_viewer.js"></script>
+</body>
+</html>
