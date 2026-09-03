@@ -1,0 +1,1233 @@
+    /* =========================
+       GLOBAL
+    ========================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans KR",
+        Arial,
+        sans-serif;
+
+      color: #0B1F3A;
+      background: #ffffff;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 150px;
+      color: #ffffff;
+      overflow: hidden;
+      isolation: isolate;
+      background: linear-gradient(180deg, #183554 0%, #0B1F3A 100%);
+    }
+
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: url("../images/church.jpg") center center / cover no-repeat;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    .header {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      padding: 28px 50px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      z-index: 10;
+    }
+
+
+    .church-name {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      text-align: left;
+      line-height: 1.25;
+    }
+
+
+    .church-logo {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 4px;
+      flex: 0 0 auto;
+    }
+
+
+    .church-name-text {
+      min-width: 0;
+    }
+
+
+    .church-name .ko {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+			color: #FFFFFF;
+    }
+
+
+    .church-name .en {
+      margin-top: 4px;
+
+      font-size: 14px;
+      font-weight: 400;
+
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+			color: #C8D4E3;
+      opacity: 0.85;
+    }
+
+
+    .nav-link {
+      color: #ffffff;
+
+      font-size: 14px;
+
+      letter-spacing: 0.5px;
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.55);
+
+      padding-bottom: 4px;
+    }
+
+
+    /* =========================
+       HERO CONTENT
+    ========================== */
+
+    .hero-content {
+      position: static;
+      width: 100%;
+      max-width: 950px;
+      margin-top: 20px;
+    }
+
+
+    .seo-title {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(48px, 7vw, 90px);
+
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+    }
+
+
+    .church-intro {
+      max-width: 720px;
+      margin: 50px auto 55px;
+      font-size: 17px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.88);
+    }
+
+
+    .small-title {
+      font-size: 13px;
+      letter-spacing: 4px;
+      margin-bottom: 18px;
+      opacity: 0.85;
+    }
+
+
+    .theme-korean {
+      font-family:
+        "Noto Serif KR",
+        Georgia,
+        serif;
+
+      font-size: clamp(34px, 5vw, 58px);
+      font-weight: 400;
+      letter-spacing: -1px;
+      margin-bottom: 22px;
+    }
+
+
+    .verse {
+      font-size: 16px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.92);
+    }
+
+
+    .verse span {
+      display: block;
+      margin-top: 7px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      opacity: 0.7;
+    }
+
+
+    /* =========================
+       HERO MENU
+    ========================== */
+
+    .hero-menu {
+      position: absolute;
+      left: 50%;
+      bottom: 58px;
+      width: calc(100% - 48px);
+      max-width: 650px;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .hero-menu-card {
+      min-height: 76px;
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.58);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      transition: background-color 0.25s ease, border-color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .hero-menu-card:hover,
+    .hero-menu-card:focus-visible {
+      color: #0B1F3A;
+      background: #ffffff;
+      border-color: #ffffff;
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .hero-menu-card .ko {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .hero-menu-card .en {
+      font-size: 9px;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      opacity: 0.78;
+    }
+
+    #worship-menu {
+      scroll-margin-top: 24px;
+    }
+
+
+    /* =========================
+       SCROLL GUIDE
+    ========================== */
+
+    .scroll-guide {
+      position: absolute;
+      left: 50%;
+      bottom: 9px;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 64px;
+      padding: 4px 10px 3px;
+      color: #ffffff;
+      background: rgba(7, 20, 38, 0.52);
+      border-radius: 999px;
+      transform: translateX(-50%);
+    }
+
+    .scroll-guide-text {
+      font-size: 8px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: 1.8px;
+    }
+
+    .scroll-guide-arrow {
+      margin-top: 1px;
+      font-size: 17px;
+      line-height: 1;
+      animation: scroll-guide-bounce 1.4s ease-in-out infinite;
+    }
+
+    @keyframes scroll-guide-bounce {
+      0%,
+      100% {
+        transform: translateY(-1px);
+      }
+
+      50% {
+        transform: translateY(4px);
+      }
+    }
+
+
+    /* =========================
+       COMMON SECTION
+    ========================== */
+
+    .section {
+      padding: 65px 24px;  /* org: 110px 24px */
+    }
+
+
+    .section-inner {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+
+    .section-label {
+      font-size: 12px;
+
+      font-weight: 600;
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
+
+      color: #8b9299;
+    }
+
+
+    .section-title {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(38px, 5vw, 58px);
+
+      font-weight: 400;
+
+      line-height: 1.2;
+
+      margin-bottom: 30px;
+
+      color: #0B1F3A;
+    }
+
+
+    /* =========================
+       SUNDAY MESSAGE
+    ========================== */
+
+	.sunday-message {
+	  background: #f7f5f0;
+	  /* padding-top: 65px; 
+	  padding-bottom: 65px; */
+	}
+
+
+    .message-grid {
+      display: grid;
+
+      grid-template-columns: 0.8fr 1.4fr;
+
+      gap: 0px;
+
+      align-items: center;
+    }
+
+
+    .message-description {
+      font-size: 17px;
+
+      line-height: 1.9;
+
+      color: #5c6670;
+
+      max-width: 650px;
+    }
+
+
+    .message-card {
+      background: #ffffff;
+
+      padding: 45px;
+
+      border: 1px solid #e6e2d9;
+    }
+
+
+    .message-card .date {
+      font-size: 12px;
+
+      letter-spacing: 2px;
+
+      color: #94999e;
+
+      margin-bottom: 20px;
+    }
+
+
+    .message-card h3 {
+      font-family:
+        "Noto Serif KR",
+        Georgia,
+        serif;
+
+      font-size: 28px;
+
+      line-height: 1.5;
+
+      font-weight: 500;
+
+      margin-bottom: 15px;
+
+      color: #0B1F3A;
+    }
+
+
+    .message-card p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #6c7379;
+      margin-bottom: 28px;
+    }
+	
+	.message-links {
+	  display: flex;
+	  align-items: center;
+	  width: 100%;
+	}
+
+	.more-link {
+	  margin-left: auto;
+	  display: inline-block;
+	  color: #9a9a9a;
+	  font-size: 12px;
+	  font-weight: 400;
+	  transition: color 0.2s ease;
+	  text-decoration: none;
+	}
+
+	.more-link:hover {
+	  color: #555555;
+	}
+
+	.more-arrow {
+	  margin-left: 3px;
+	  font-size: 16px;
+	}
+
+
+    .text-link {
+      display: inline-block;
+      color: #0B1F3A;
+      font-size: 14px;
+      font-weight: 600;
+      border-bottom: none;
+      padding-bottom: 0;
+      text-decoration: none;
+    }
+
+
+    /* =========================
+       MINISTRY MENU
+    ========================== */
+
+    .ministry-menu {
+      background: #ffffff;
+      text-align: center;
+    }
+	
+	.ministry-menu .section-label,
+	.ministry-menu .section-title {
+	  text-align: left;
+	}
+
+    .menu-intro {
+      max-width: 650px;
+      margin: 0 auto 55px;
+      font-size: 21px;
+      line-height: 1.8;
+      color: #6b747c;
+    }
+
+    .menu-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .menu-row-top {
+      margin-bottom: 10px;
+    }
+
+    .menu-card {
+      width: 155px;
+      height: 72px;
+      padding: 10px 8px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      background: #ffffff;
+      color: #0B1F3A;
+      white-space: nowrap;
+      transition: 0.25s ease;
+    }
+
+    .menu-card-primary {
+      border: 1px solid #d7dce1;
+    }
+
+    .menu-card-secondary {
+      border: 1px solid #c9b88f;
+    }
+
+    .menu-card:hover {
+      background: #0B1F3A;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .menu-card .ko {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .menu-card .en {
+      font-size: 9px;
+      letter-spacing: 0.8px;
+      opacity: 0.65;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+
+    /* =========================
+       VISIT US
+    ========================== */
+
+    .visit {
+      background: #0B1F3A;
+
+      color: #ffffff;
+    }
+
+
+    .visit .section-label {
+      color: rgba(255,255,255,0.55);
+    }
+
+
+    .visit .section-title {
+      color: #ffffff;
+	  font-size: 30px;
+	  white-space: nowrap;
+    }
+
+
+    .visit-grid {
+      display: grid;
+
+      grid-template-columns: 0.8fr 1.2fr;
+
+      gap: 80px;
+    }
+
+
+    .visit-intro {
+      font-size: 17px;
+
+      line-height: 1.9;
+
+      color:
+        rgba(255,255,255,0.78);
+
+      max-width: 520px;
+    }
+
+
+    .visit-info {
+      border-left:
+        1px solid rgba(255,255,255,0.18);
+
+      padding-left: 45px;
+    }
+
+
+    .visit-item {
+      margin-bottom: 30px;
+    }
+
+
+    .visit-item .label {
+      font-size: 11px;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      opacity: 0.55;
+
+      margin-bottom: 8px;
+    }
+
+
+    .visit-item .value {
+      font-size: 17px;
+
+      line-height: 1.7;
+    }
+
+
+    .visit-link {
+      display: inline-block;
+
+      margin-top: 10px;
+
+      color: #ffffff;
+
+      font-size: 14px;
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.65);
+
+      padding-bottom: 4px;
+    }
+
+    .direction-link {
+      margin-left: 18px;
+    }
+
+    .map-wrap {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 20px;
+    }
+
+    .google-map {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: clamp(280px, 34vw, 440px);
+      border: 0;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #071426;
+
+      color:
+        rgba(255,255,255,0.55);
+
+      text-align: center;
+
+      font-size: 12px;
+
+      padding: 28px 20px;
+
+      letter-spacing: 0.7px;
+    }
+
+
+
+
+    /* =========================
+       NAVY HERO TEXT THEME
+    ========================== */
+
+    .hero {
+      color: #F8FAFC;
+    }
+
+    .church-name .ko {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+			color: #FFFFFF;
+    }
+
+
+    .church-name .en {
+      margin-top: 4px;
+
+      font-size: 14px;
+      font-weight: 400;
+
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+			color: #C8D4E3;
+      opacity: 0.85;
+    }
+
+    .nav-link {
+      color: #DCE6F2;
+      border-bottom: 1px solid rgba(220, 230, 242, 0.55);
+    }
+
+    .theme-korean {
+      color: #FFFFFF;
+    }
+
+    .verse {
+      color: #E4EAF2;
+    }
+
+    .verse span {
+      color: #AEBED1;
+      opacity: 1;
+    }
+
+    .church-intro {
+      color: #E5EBF2;
+    }
+
+    .church-intro-en {
+      display: block;
+      margin-top: 18px;
+      font-size: 13px;
+      line-height: 1.7;
+      color: #B8C6D8;
+    }
+
+
+    /* =========================
+       TABLET
+    ========================== */
+
+    @media (max-width: 950px) {
+
+      .message-grid,
+      .visit-grid {
+
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+
+      .visit-info {
+
+        border-left: none;
+
+        border-top:
+          1px solid rgba(255,255,255,0.18);
+
+        padding-left: 0;
+
+        padding-top: 35px;
+      }
+
+      .map-wrap,
+      .google-map {
+        width: 100%;
+        max-width: 100%;
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 700px) {
+
+      .hero {
+
+        min-height: 100svh;
+        padding: 125px 20px 115px;
+      }
+
+
+      .header {
+
+        padding: 21px 20px;
+        align-items: flex-start;
+      }
+
+
+      .church-name {
+        gap: 9px;
+      }
+
+
+      .church-logo {
+        width: 48px;
+        height: 48px;
+      }
+
+
+    .church-name .ko {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+			color: #FFFFFF;
+    }
+
+
+    .church-name .en {
+      margin-top: 4px;
+
+      font-size: 14px;
+      font-weight: 400;
+
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+			color: #C8D4E3;
+      opacity: 0.85;
+    }
+
+
+      .nav-link {
+
+        font-size: 11px;
+        white-space: nowrap;
+      }
+
+
+      .seo-title {
+
+        font-size: clamp(39px, 12vw, 58px);
+        letter-spacing: -1.5px;
+      }
+
+
+      .church-intro {
+
+        font-size: 14px;
+        margin: 36px auto 36px;
+      }
+
+
+      .hero-menu {
+        bottom: 52px;
+        width: calc(100% - 28px);
+        max-width: 440px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+      }
+
+
+      .hero-menu-card {
+        min-width: 0;
+        min-height: 66px;
+        padding: 11px 5px;
+      }
+
+
+      .hero-menu-card .ko {
+        font-size: 14px;
+      }
+
+
+      .hero-menu-card .en {
+        font-size: 7px;
+        letter-spacing: 0.45px;
+      }
+
+
+      .small-title {
+
+        font-size: 10px;
+        letter-spacing: 3px;
+      }
+
+
+      .theme-korean {
+
+        font-size: 35px;
+      }
+
+
+      .verse {
+
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+
+      .section {
+
+        padding: 50px 20px;
+      }
+
+
+      .section-title {
+
+        font-size: 37px;
+      }
+
+
+      .message-card {
+
+        padding: 30px 24px;
+      }
+
+
+      .message-card h3 {
+
+        font-size: 24px;
+      }
+
+      .direction-link {
+        margin-left: 12px;
+      }
+
+      .google-map {
+        height: 320px;
+      }
+
+
+      .menu-row {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .menu-row-top {
+        margin-bottom: 10px;
+      }
+
+      .menu-card {
+        width: 140px;
+        height: 68px;
+        padding: 10px 8px;
+      }
+
+      .menu-card .ko {
+        font-size: 15px;
+      }
+
+      .menu-card .en {
+        font-size: 8px;
+        letter-spacing: 0.6px;
+      }
+
+	  .visit-title {
+		font-size: 30px;
+	  }
+
+	  .visit-title span {
+		white-space: nowrap;
+	  }
+	  
+    }
+
+
+    @media (max-width: 380px) {
+
+      .hero {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .hero-menu-card .ko {
+        font-size: 13px;
+      }
+
+      .hero-menu-card .en {
+        font-size: 6.5px;
+      }
+
+    }
+
+    @media (max-width: 420px) {
+      .direction-link {
+        display: table;
+        margin-left: 0;
+        margin-top: 14px;
+      }
+    }
+
+
+    /* =========================
+       HERO PHOTO READABILITY
+    ========================== */
+
+    .theme-korean,
+    .verse,
+    .church-intro {
+      color: #ffffff;
+      text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.9),
+        0 3px 10px rgba(0, 0, 0, 0.75);
+    }
+
+    .theme-korean {
+      text-shadow:
+        0 2px 3px rgba(0, 0, 0, 0.95),
+        0 5px 16px rgba(0, 0, 0, 0.75);
+    }
+
+    .church-intro-en {
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .hero-menu-card {
+      background: rgba(11, 31, 58, 0.28);
+      border-color: rgba(255, 255, 255, 0.8);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+
+
+    /* =========================
+       HERO TEXT POSITION / COLOR
+    ========================== */
+
+    .church-name .ko,
+    .theme-korean,
+    .verse,
+    .verse span {
+      color: #000000;
+    }
+
+    .theme-korean,
+    .verse,
+    .verse span {
+      text-shadow: none;
+    }
+
+    .hero-theme-group {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      z-index: 2;
+      width: calc(100% - 40px);
+      transform: translate(-50%, -100%);
+    }
+
+    /* 이전 HTML 구조에서도 제목과 구절을 영역 높이만큼 위로 이동 */
+    .hero-content > .theme-korean,
+    .hero-content > .verse {
+      transform: translateY(-120px) !important;
+    }
+
+    .church-intro {
+      position: absolute;
+      left: 50%;
+      bottom: 150px;
+      z-index: 2;
+      width: fit-content;
+      max-width: calc(100% - 48px);
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      border: none;
+      transform: translateX(-50%);
+    }
+
+    .church-intro-ko,
+    .church-intro-en {
+      display: table;
+      width: auto;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 6px 10px;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      line-height: 1.25;
+    }
+
+    .church-intro-en {
+      margin-top: 8px;
+    }
+
+    .theme-korean,
+    .verse,
+    .verse span {
+      font-weight: 700;
+    }
+
+    @media (max-width: 700px) {
+
+      .hero-theme-group {
+        top: 39%;
+        width: calc(100% - 32px);
+      }
+
+      .church-intro {
+        bottom: 132px;
+        width: fit-content;
+        max-width: calc(100% - 24px);
+        margin: 0;
+        padding: 0;
+      }
+
+    }
+
+    .church-intro .church-intro-en {
+      line-height: 1.1 !important;
+    }
+
+    .church-intro-ko + .church-intro-en {
+      margin-top: 8px;
+    }
+
+    .church-intro-en + .church-intro-en {
+      margin-top: 0;
+    }
+
+    .verse span {
+      color: #000000;
+    }
+
+    /* 페이지 전체 글자 그림자 제거 */
+    body,
+    body * {
+      text-shadow: none !important;
+    }
+
+
+    /* =========================
+       SCROLL GUIDE — 예배말씀 오른쪽
+    ========================== */
+
+    .scroll-guide {
+      position: absolute;
+      left: calc(50% + 337px);
+      bottom: 54px;
+      z-index: 3;
+      width: auto;
+      min-width: 0;
+      padding: 0;
+      display: inline-flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      white-space: nowrap;
+      text-decoration: none;
+      transform: none;
+    }
+
+    .scroll-guide-text {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: 1.5px;
+    }
+
+    .scroll-guide-arrow {
+      display: inline-block;
+      margin-left: 0px;
+      font-size: 20px;
+      line-height: 1;
+      animation: scroll-guide-bounce 1.4s ease-in-out infinite;
+    }
+
+    @media (max-width: 780px) {
+      .hero-menu {
+        left: calc(50% - 28px);
+        width: calc(100% - 84px);
+      }
+
+      .scroll-guide {
+        left: auto;
+        right: 7px;
+        bottom: 43px;
+      }
+
+      .scroll-guide-text {
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+
+      .scroll-guide-arrow {
+        margin-left: 0px;
+        font-size: 20px;
+      }
+    }
+
+    /* HERO 하단 소개 문구와 메뉴를 기존 위치보다 30px 아래로 이동 */
+    .hero-menu {
+      bottom: 28px;
+    }
+
+    .church-intro {
+      bottom: 120px;
+    }
+
+    @media (max-width: 780px) {
+      .hero-menu {
+        bottom: 22px;
+      }
+
+      .church-intro {
+        bottom: 102px;
+      }
+    }

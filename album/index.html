@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>교제 앨범 | 벧엘한인장로교회</title>
+  <meta name="description" content="벧엘한인장로교회 교제 활동 사진과 영상 앨범입니다.">
+  <link rel="stylesheet" href="../assets/css/album_style.css">
+</head>
+<body class="album-page">
+  <header class="album-header">
+    <a href="../index.html" class="album-brand">
+      <img src="../assets/images/logo.jpg" alt="벧엘한인장로교회 로고">
+      <span>
+        <strong>벧엘한인장로교회</strong>
+        <small>Korean Bethel Presbyterian Church · Fayetteville, NC</small>
+      </span>
+    </a>
+    <a href="../index.html#ministry-menu" class="back-link">← 뒤로가기</a>
+  </header>
+
+  <section class="album-hero">
+    <div>PHOTO ALBUM</div>
+    <h1>앨범</h1>
+    <!-- <p>함께 예배하고 사랑을 나누는 벧엘 공동체의 기록입니다.</p> -->
+  </section>
+
+  <main class="album-content">
+    <div class="album-list" id="albumList"></div>
+    <p class="empty-state" id="emptyState" hidden>등록된 앨범이 없습니다.</p>
+
+    <div class="album-bottom-links">
+      <nav class="album-years" id="albumYearList" aria-label="앨범 연도" hidden></nav>
+      <a
+        class="legacy-album-link"
+        href="https://www.bethelkrchurch.org/board/list.do?iboardmanagerseq=25"
+        target="_blank"
+        rel="noopener noreferrer">
+        2026년 이전 사진보러가기 →
+      </a>
+    </div>
+  </main>
+
+  <footer class="album-footer">© Korean Bethel Presbyterian Church · Fayetteville, North Carolina</footer>
+
+  <script src="./album_years.js"></script>
+  <script src="./album_data.js"></script>
+  <script src="../assets/script/album_list.js"></script>
+</body>
+</html>

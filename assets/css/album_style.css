@@ -1,0 +1,134 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", Arial, sans-serif; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+.album-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #0B1F3A;
+  background: #F7F5F0;
+}
+
+.album-header {
+  padding: 20px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: #FFFFFF;
+  background: #0B1F3A;
+}
+
+.album-brand { min-width: 0; display: flex; align-items: center; gap: 13px; }
+.album-brand img { width: 54px; height: 54px; flex: 0 0 auto; object-fit: contain; border-radius: 4px; }
+.album-brand span, .album-brand strong, .album-brand small { display: block; }
+.album-brand strong { font-size: 18px; font-weight: 600; line-height: 1.3; }
+.album-brand small { margin-top: 4px; color: #C8D4E3; font-size: 10px; line-height: 1.5; letter-spacing: 1.1px; text-transform: uppercase; }
+.back-link { flex-shrink: 0; color: #DCE6F2; font-size: 13px; white-space: nowrap; }
+
+.album-hero { padding: 58px 24px 64px; color: #FFFFFF; background: #0B1F3A; text-align: center; }
+.album-hero > div { margin-bottom: 16px; color: #AEBED1; font-size: 11px; font-weight: 600; letter-spacing: 3.5px; }
+.album-hero h1 { margin: 0 0 16px; font-family: Georgia, "Times New Roman", "Noto Serif KR", serif; font-size: clamp(40px, 6vw, 64px); font-weight: 400; line-height: 1.15; }
+.album-hero p { max-width: 680px; margin: 0 auto; color: #D8E2EE; font-size: 15px; line-height: 1.7; }
+.album-detail-hero #albumDescription { white-space: pre-line; text-align: center; }
+.album-detail-hero { padding-top: 48px; padding-bottom: 52px; }
+.album-detail-hero h1 { max-width: 900px; margin-left: auto; margin-right: auto; font-size: clamp(28px, 4vw, 44px); line-height: 1.25; white-space: pre-line; }
+
+.album-content { width: 100%; max-width: 1180px; margin: 0 auto; padding: 54px 24px 76px; flex: 1; }
+.album-bottom-links { margin-top: 42px; display: flex; align-items: center; justify-content: center; gap: 24px; }
+.album-years { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; }
+.album-years[hidden] { display: none; }
+.album-year { min-width: 72px; padding: 9px 15px; color: #183554; background: #FFFFFF; border: 1px solid #C8D4E3; text-align: center; font-size: 14px; font-weight: 600; }
+.album-year:hover, .album-year:focus-visible, .album-year.is-active { color: #FFFFFF; background: #0B1F3A; border-color: #0B1F3A; outline: none; }
+.album-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 180px);
+  justify-content: center;
+  gap: 12px;
+}
+
+.album-card { width: 180px; min-width: 0; overflow: hidden; display: block; background: #FFFFFF; border: 1px solid #E1E4E8; transition: transform .22s ease, border-color .22s ease; }
+.album-card:hover, .album-card:focus-visible { border-color: #0B1F3A; transform: translateY(-3px); outline: none; }
+.album-cover { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #D8E2EE; }
+.album-cover img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .3s ease; }
+.album-card:hover .album-cover img { transform: scale(1.025); }
+.album-card-copy { min-height: 58px; padding: 10px 12px; display: flex; flex-direction: column; justify-content: center; }
+.album-card-copy small { margin-bottom: 7px; color: #8B9299; font-size: 10px; font-weight: 600; letter-spacing: 1.3px; }
+.album-card-copy strong { font-size: 16px; font-weight: 600; line-height: 1.35; white-space: pre-line; }
+.album-card-copy span { margin-top: 7px; color: #66717D; font-size: 11px; line-height: 1.45; }
+
+.media-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+.media-card { position: relative; aspect-ratio: 4 / 3; overflow: hidden; padding: 0; cursor: pointer; background: #D8E2EE; border: 0; }
+.media-card > img, .media-card > video { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .25s ease; }
+.media-card:hover > img, .media-card:hover > video { transform: scale(1.035); }
+.media-card:focus-visible { outline: 3px solid #0B1F3A; outline-offset: 2px; }
+.play-icon { position: absolute; left: 50%; top: 50%; width: 52px; height: 52px; display: grid; place-items: center; color: #FFFFFF; background: rgba(7,20,38,.74); border: 1px solid rgba(255,255,255,.75); border-radius: 50%; transform: translate(-50%,-50%); }
+.audio-thumbnail { width: 100%; height: 100%; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: #FFFFFF; background: #183554; }
+.audio-thumbnail > span { font-family: Georgia, serif; font-size: 48px; }
+.audio-thumbnail strong { font-size: 15px; font-weight: 600; text-align: center; }
+.empty-state { margin: 0; padding: 70px 20px; color: #66717D; background: #FFFFFF; border: 1px solid #E1E4E8; text-align: center; }
+.legacy-album-link {
+  display: inline-block;
+  padding: 10px 2px;
+  color: #183554;
+  border-bottom: 1px solid #183554;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+.legacy-album-link:hover,
+.legacy-album-link:focus-visible {
+  color: #0B1F3A;
+  border-bottom-color: #0B1F3A;
+  outline: none;
+}
+
+.media-viewer[hidden] { display: none; }
+.media-viewer { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; background: #071426; }
+.viewer-stage { width: 100%; height: 100%; padding: 26px 70px 52px; display: flex; align-items: center; justify-content: center; }
+.viewer-stage img, .viewer-stage video { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
+.viewer-audio { width: min(520px, 100%); padding: 44px 28px; color: #FFFFFF; background: #0B1F3A; text-align: center; }
+.viewer-audio > span { font-family: Georgia, serif; font-size: 72px; }
+.viewer-audio h2 { margin: 12px 0 24px; font-size: 22px; }
+.viewer-audio audio { width: 100%; }
+.viewer-nav, .viewer-close { position: absolute; z-index: 2; color: #FFFFFF; background: rgba(255,255,255,.10); border: 0; cursor: pointer; }
+.viewer-nav { top: 50%; width: 42px; height: 62px; border-radius: 5px; font-size: 37px; line-height: 1; transform: translateY(-50%); }
+.viewer-prev { left: 13px; }
+.viewer-next { right: 13px; }
+.viewer-close { top: 13px; right: 16px; width: 42px; height: 42px; border-radius: 50%; font-size: 30px; line-height: 1; }
+.viewer-nav:hover, .viewer-nav:focus-visible, .viewer-close:hover, .viewer-close:focus-visible { background: rgba(255,255,255,.23); outline: 2px solid rgba(255,255,255,.8); }
+.viewer-count { position: absolute; left: 50%; bottom: 14px; color: #FFFFFF; font-size: 13px; transform: translateX(-50%); }
+.viewer-open { overflow: hidden; }
+
+.album-footer { margin-top: auto; padding: 28px 20px; color: rgba(255,255,255,.55); background: #071426; font-size: 12px; letter-spacing: .7px; text-align: center; }
+
+@media (max-width: 700px) {
+  .album-header { padding: 15px 18px; align-items: flex-start; }
+  .album-brand { gap: 9px; }
+  .album-brand img { width: 44px; height: 44px; }
+  .album-brand strong { font-size: 15px; }
+  .album-brand small { max-width: 205px; font-size: 8px; }
+  .back-link { font-size: 11px; }
+  .album-hero { padding: 46px 18px 52px; }
+  .album-hero h1 { font-size: 39px; }
+  .album-detail-hero h1 { font-size: 28px; }
+  .album-hero p { font-size: 13px; }
+  .album-content { padding: 34px 14px 50px; }
+  .album-list { grid-template-columns: repeat(2, minmax(0, 180px)); gap: 9px; }
+  .album-card { width: 100%; max-width: 180px; }
+  .album-card-copy { min-height: 58px; padding: 10px 11px; }
+  .album-card-copy strong { font-size: 16px; }
+  .album-card-copy span { font-size: 11px; }
+  .album-bottom-links { margin-top: 30px; flex-wrap: wrap; gap: 12px 20px; }
+  .legacy-album-link { font-size: 13px; }
+  .media-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .play-icon { width: 42px; height: 42px; }
+  .viewer-stage { padding: 50px 40px 46px; }
+  .viewer-nav { width: 32px; height: 50px; font-size: 29px; }
+  .viewer-prev { left: 4px; }
+  .viewer-next { right: 4px; }
+  .viewer-close { top: 8px; right: 9px; }
+}
