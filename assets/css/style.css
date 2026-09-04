@@ -797,6 +797,10 @@
 
     @media (max-width: 700px) {
 
+      .hero::before {
+        background-position: left center;
+      }
+
       .hero {
 
         min-height: 100svh;
