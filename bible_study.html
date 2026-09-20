@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>성경공부 | 벧엘한인장로교회 | Korean Bethel Presbyterian Church</title>
+  <meta name="description" content="벧엘한인장로교회의 성경공부 프로그램을 안내합니다.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="stylesheet" href="./assets/css/worship_style.css">
+  <style>
+    .bible-study-list {
+      grid-template-columns: 1fr;
+    }
+
+    .bible-study-card h2,
+    .bible-study-card .worship-time {
+      white-space: normal;
+    }
+
+    .bible-study-bottom-link {
+      margin-top: 40px;
+      text-align: right;
+    }
+
+    .legacy-album-link {
+      display: inline-block;
+      padding: 10px 2px;
+      color: #183554;
+      border-bottom: 1px solid #183554;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .2px;
+    }
+
+    .legacy-album-link:hover,
+    .legacy-album-link:focus-visible {
+      color: #0B1F3A;
+      border-bottom-color: #0B1F3A;
+      outline: none;
+    }
+
+    @media (max-width: 700px) {
+      .bible-study-list {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .bible-study-bottom-link {
+        margin-top: 30px;
+      }
+
+      .legacy-album-link {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body class="worship-page">
+
+  <header class="subpage-header">
+    <a href="./index.html" class="subpage-brand">
+      <div class="ko">벧엘한인장로교회</div>
+      <div class="en">Korean Bethel Presbyterian Church · Fayetteville, NC</div>
+    </a>
+
+    <a href="./index.html#ministry-menu" class="subpage-home">← 뒤로가기</a>
+  </header>
+
+  <section class="worship-hero">
+    <div class="eyebrow">BIBLE STUDY</div>
+    <h1>성경공부</h1>
+  </section>
+
+  <main class="worship-content">
+    <div class="worship-list bible-study-list" id="bibleStudyList"></div>
+
+    <div class="bible-study-bottom-link">
+      <a class="legacy-album-link" 
+        href="https://www.bethelkrchurch.org/board/list.do?iboardmanagerseq=16"
+        target="_blank"
+        rel="noopener noreferrer">
+        지난 성경공부 보기 →
+      </a>
+    </div>
+  </main>
+
+  <footer class="subpage-footer">
+    © Korean Bethel Presbyterian Church · Fayetteville, North Carolina
+  </footer>
+
+  <script src="./assets/script/bible_study_data.js"></script>
+  <script src="./assets/script/bible_study_list.js"></script>
+
+</body>
+</html>

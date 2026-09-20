@@ -14,13 +14,12 @@
 
     body {
       font-family:
-		"Noto Sans KR",
-        "Malgun Gothic",
-        sans-serif, 
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
-        Arial;
+        "Noto Sans KR",
+        Arial,
+        sans-serif;
 
       color: #0B1F3A;
       background: #ffffff;
@@ -1167,7 +1166,8 @@
       min-width: 0;
       padding: 0;
       display: inline-flex;
-      flex-flow: row nowrap;
+      flex-flow: column nowrap;
+      gap: 2px;
       align-items: center;
       justify-content: center;
       color: #FFFFFF;
@@ -1204,7 +1204,10 @@
       .scroll-guide {
         left: auto;
         right: 7px;
-        bottom: 43px;
+        bottom: 5px;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
       }
 
       .scroll-guide-text {
@@ -1213,7 +1216,7 @@
       }
 
       .scroll-guide-arrow {
-        margin-left: 0px;
+        margin: 0;
         font-size: 20px;
       }
     }

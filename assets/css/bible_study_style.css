@@ -1,0 +1,328 @@
+/* Bible Study page
+   Visual language follows the existing subpage structure used by
+   about_us.html and worship.html.
+*/
+
+:root {
+  --page-bg: #f7f5f0;
+  --card-bg: #ffffff;
+  --text: #222222;
+  --muted: #77736b;
+  --line: #dedbd4;
+  --accent: #7b6650;
+  --accent-dark: #574737;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans KR",
+    Arial,
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.worship-page {
+  min-height: 100vh;
+  background: #F7F5F0;
+  color: #0B1F3A;
+}
+
+
+/* =========================
+   HEADER
+========================== */
+
+.subpage-header {
+  background: #0B1F3A;
+  color: #FFFFFF;
+  padding: 26px 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.subpage-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.subpage-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.subpage-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.subpage-brand-text .ko {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.subpage-brand-text .en {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 1.1px;
+  color: #C8D4E3;
+  text-transform: uppercase;
+}
+
+.subpage-home,
+.back-link {
+  flex-shrink: 0;
+  color: #DCE6F2;
+  font-size: 13px;
+  /* border-bottom: 1px solid rgba(220,230,242,0.55); */
+  padding-bottom: 4px;
+  white-space: nowrap;
+	border-bottom: none;
+  text-decoration: none;
+}
+
+.subpage-home:hover {
+  color: var(--text);
+}
+
+/* =========================
+   HERO
+========================== */
+
+.bible-study-hero {
+  background: #0B1F3A;
+  color: #FFFFFF;
+  padding: 72px 24px 82px;
+  text-align: center;
+}
+
+.worship-hero .eyebrow {
+  margin-bottom: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #AEBED1;
+}
+
+.eyebrow,
+.bible-study-type,
+.bible-study-archive-label {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+
+.worship-hero h1 {
+  margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
+  font-size: clamp(42px, 6vw, 68px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.worship-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #D8E2EE;
+}
+
+
+/* =========================
+   CONTENT
+========================== */
+
+.bible-study-content {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+.bible-study-list {
+  display: grid;
+  gap: 14px;
+}
+
+
+/* =========================
+  CARD
+========================== */
+
+.bible-study-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 150px;
+  padding: 28px 32px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+}
+
+.bible-study-card-main {
+  min-width: 0;
+}
+
+.worship-card h2 {
+  margin: 0 0 10px;
+  font-family: "Noto Serif KR", Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -.025em;
+  color: #0B1F3A;
+  white-space: nowrap;
+}
+
+/* =========================
+  TIME
+========================== */
+
+.bible-study-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.bible-study-info span {
+  margin-right: 7px;
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.bible-study-time {
+  flex: 0 0 auto;
+  color: var(--accent-dark);
+  font-size: 18px;
+  font-weight: 600;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.bible-study-archive {
+  margin-top: 52px;
+  padding: 30px 32px;
+  border-top: 1px solid var(--line);
+}
+
+.bible-study-archive h2 {
+  margin: 7px 0 18px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.bible-study-archive-link {
+  display: inline-block;
+  color: var(--accent-dark);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 3px;
+}
+
+.bible-study-archive-link:hover {
+  opacity: .7;
+}
+
+.subpage-footer {
+  padding: 28px 20px 36px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  text-align: center;
+  font-size: 11px;
+}
+
+@media (max-width: 700px) {
+  .subpage-header {
+    width: min(100% - 28px, 1120px);
+    min-height: 76px;
+  }
+
+  .subpage-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .subpage-brand-text .ko {
+    font-size: 16px;
+  }
+
+  .subpage-brand-text .en {
+    font-size: 8px;
+  }
+
+  .subpage-home {
+    font-size: 12px;
+  }
+
+  .bible-study-hero,
+  .bible-study-content {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .bible-study-hero {
+    padding: 46px 0 38px;
+  }
+
+  .bible-study-hero p {
+    font-size: 14px;
+  }
+
+  .bible-study-card {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    padding: 24px;
+  }
+
+  .bible-study-card h2 {
+    margin-bottom: 13px;
+  }
+
+  .bible-study-time {
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .bible-study-archive {
+    padding: 26px 0;
+  }
+}
