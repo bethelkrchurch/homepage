@@ -21,6 +21,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  font: inherit;
+}
+
 .school-page {
   min-height: 100vh;
   background: #F7F5F0;
@@ -136,9 +140,7 @@ a {
 }
 
 .intro-section {
-  display: grid;
-  grid-template-columns: .85fr 1.15fr;
-  gap: 80px;
+  display: block;
   padding-top: 100px;
   padding-bottom: 108px;
 }
@@ -164,6 +166,9 @@ a {
 
 .intro-copy {
   padding-top: 0;
+  color: #4F5C6A;
+  font-size: 16px;
+  line-height: 1.9;
 }
 
 .intro-copy p {
@@ -171,6 +176,64 @@ a {
   color: #4F5C6A;
   font-size: 16px;
   line-height: 1.9;
+}
+
+.registration-card {
+  width: 100%;
+  margin-top: 42px;
+  padding: 27px 30px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 26px;
+  color: #FFFFFF;
+  background: #B54708;
+  border: 1px solid #B54708;
+  cursor: pointer;
+  text-align: left;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.registration-card:hover,
+.registration-card:focus-visible {
+  background: #aa4007;
+  border-color: #aa4007;
+  box-shadow: 0 14px 30px rgba(146, 56, 6, .22);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.registration-label {
+  padding: 7px 10px;
+  color: #923806;
+  background: #FFFFFF;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  white-space: nowrap;
+}
+
+.registration-copy strong,
+.registration-copy small {
+  display: block;
+}
+
+.registration-copy strong {
+  font-family: "Noto Serif KR", Georgia, serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.registration-copy small {
+  margin-top: 7px;
+  color: #C8D4E3;
+  font-size: 13px;
+}
+
+.registration-action {
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .program-section {
@@ -231,8 +294,8 @@ a {
   display: grid;
   grid-template-columns: .72fr 1.28fr;
   gap: 85px;
-  padding-top: 105px;
-  padding-bottom: 110px;
+  padding-top: 64px;
+  padding-bottom: 68px;
 }
 
 .details-heading h2 {
@@ -316,6 +379,12 @@ a {
   margin-top: 36px;
 }
 
+@media (min-width: 701px) {
+  .contact-actions {
+    gap: 72px;
+  }
+}
+
 .primary-link,
 .secondary-link {
   display: inline-block;
@@ -365,8 +434,102 @@ a {
   text-align: center;
 }
 
+.poster-viewer[hidden] {
+  display: none;
+}
+
+.poster-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(7, 20, 38, .97);
+}
+
+.poster-stage {
+  width: 100%;
+  height: 100%;
+  padding: 34px 76px 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poster-stage img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, .35);
+}
+
+.poster-nav,
+.poster-close {
+  position: absolute;
+  z-index: 2;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, .10);
+  border: 0;
+  cursor: pointer;
+}
+
+.poster-nav {
+  top: 50%;
+  width: 44px;
+  height: 64px;
+  border-radius: 5px;
+  font-size: 38px;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.poster-prev {
+  left: 14px;
+}
+
+.poster-next {
+  right: 14px;
+}
+
+.poster-close {
+  top: 14px;
+  right: 17px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.poster-nav:hover,
+.poster-nav:focus-visible,
+.poster-close:hover,
+.poster-close:focus-visible {
+  background: rgba(255, 255, 255, .23);
+  outline: 2px solid rgba(255, 255, 255, .8);
+}
+
+.poster-count {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  color: #FFFFFF;
+  font-size: 13px;
+  transform: translateX(-50%);
+}
+
+.poster-viewer-open {
+  overflow: hidden;
+}
+
+.instagram-highlight {
+  color: #FFD54A;
+  font-weight: 700;
+}
+
 @media (max-width: 800px) {
-  .intro-section,
   .details-inner {
     grid-template-columns: 1fr;
     gap: 42px;
@@ -425,6 +588,21 @@ a {
     padding-bottom: 70px;
   }
 
+  .registration-card {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 30px;
+    padding: 24px 22px;
+  }
+
+  .registration-label {
+    justify-self: start;
+  }
+
+  .registration-copy strong {
+    font-size: 21px;
+  }
+
   .intro-copy p {
     font-size: 14px;
   }
@@ -441,9 +619,9 @@ a {
     padding: 28px 24px;
   }
 
-  .details-section {
-    padding-top: 68px;
-    padding-bottom: 74px;
+  .details-inner {
+    padding-top: 48px;
+    padding-bottom: 52px;
   }
 
   .detail-row {
@@ -467,6 +645,29 @@ a {
 
   .contact-actions {
     flex-direction: column;
+  }
+
+  .poster-stage {
+    padding: 52px 42px 48px;
+  }
+
+  .poster-nav {
+    width: 32px;
+    height: 50px;
+    font-size: 29px;
+  }
+
+  .poster-prev {
+    left: 5px;
+  }
+
+  .poster-next {
+    right: 5px;
+  }
+
+  .poster-close {
+    top: 9px;
+    right: 10px;
   }
 
   .primary-link,
